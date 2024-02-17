@@ -1,17 +1,18 @@
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Rethink_Sans } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
+
 import "./globals.css";
 
-const rethinkSans = Rethink_Sans({
+const IBMPlex = IBM_Plex_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-  variable: "--font-rethink-sans",
+  variable: "--font-ibm-plex",
 });
 
 export const metadata: Metadata = {
   title: "Imaginify",
-  description: "AI Image Generator",
+  description: "AI-powered image generator",
 };
 
 export default function RootLayout({
@@ -21,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn("antialiased" + rethinkSans.variable)}>
+      <body className={cn("font-IBMPlex antialiased", IBMPlex.variable)}>
         {children}
       </body>
     </html>
